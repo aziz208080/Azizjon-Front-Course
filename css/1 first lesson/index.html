@@ -12,7 +12,8 @@
 
 
     <main style="background-color: #333;">
-        <p style="color: red; color: green;" class="testclass" id="testid" >Lorem ipsum dolor sit amet.</p>
+        <!-- <p style="color: red; color: green;" class="testclass" id="testid">Lorem ipsum dolor sit amet.</p> -->
+        <p>Lorem ipsum dolor sit amet.</p>
         <aside>
             <p>Lorem ipsum dolor sit amet.</p>
             <div>
@@ -21,27 +22,106 @@
         </aside>
     </main>
 
+    <!-- <div>
+        <p>Lorem ipsum dolor sit amet.</p>
+    </div> -->
+    <input type="submit" class="in1" id="testid">
+    <br>
+    <input type="reset" >
+    <br>
+    <button type="submit" class="in1">
+        submit
+    </button>
+    <!-- <br> -->
+    <span>
+        span
+    </span>
+    <span>
+        span
+    </span>
+    
+    
 
+    <!-- <h1 style="color: red;">
+        heading
+    </h1> -->
+
+    
 </body>
 <style>
-.testclass{ 
-    color: green;
-}
-#testid{
-    color: blue;
-}
 
-h1{}
-p{
-    color: aqua;
-}
+    *{
+        background-color: #000;
+        color: snow;
+    }
+    .testclass {
+        /* color: green; */
+    }
+
+    #testid {
+        /* color: aqua; */
+    }
+
+    h1 {}
+
+    p {
+        /* color: aqua; */
+    }
 
 
-p{
-    color: blue;
-}
-button{}
+    p {
+        /* color: blue !important; */
+    }
 
-   
+    /* input[type='submit']{
+        color: green;
+        background-color: #222;
+    } */
+
+    button.in1{
+        /* background-color: red; */
+    }
+
+    div p{
+        color: red;
+    }
+    
+    /* main  p {
+        color: blue;
+    } */
+    
+    main > p {
+        color: blue;
+    }
+
+
+    /* input[type='submit'], button{
+        color: red;
+    } */
+    
+
+    button + span{
+        color: green;
+    }
+    button ~ span{
+        /* color: green; */
+    }
+
+    input[type='submit']{
+        color: red;
+    }
+    button[type='submit']{
+        color: green;
+    }
+
+    h1.testclass{
+        
+    }
+
+    h1#testid{
+
+    }
+
 </style>
+
 </html>
