@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+</html>
+
+
+
+<body>
+    <main class="container">
+        <header>
+            <h1>Билл Гейтс</h1>
+            <p class="subtitle">Американский программист, бизнесмен и филантроп</p>
+        </header>
+        <section class="image-container">
+            <img src="/img/Bill-Gates.jpg" alt="Фотография Билла Гейтса">
+        </section>
+        <section class="actions">
+            <button>Печать</button>
+            <button>Цитировать</button>
+            <button>Поделиться</button>
+            <button>Отзыв</button>
+        </section>
+        <section class="meta">
+            <small>
+                <em>Альтернативные имена: Уильям Генри Гейтс III</em><br>
+                Автор: <a href="#">Редакторы Encyclopaedia Britannica</a><br>
+                Последнее обновление: 24 октября 2022 г. <a href="#">История изменений</a>
+            </small>
+        </section>
+        <section class="bio">
+            <p>
+                Билл Гейтс, полное имя Уильям Генри Гейтс III, (родился 28 октября 1955 года, Сиэтл, Вашингтон, США),
+                американский программист и предприниматель, соучредитель Microsoft Corporation, крупнейшей в мире
+                компании по разработке программного обеспечения для персональных компьютеров.
+            </p>
+        </section>
+        <footer class="source">
+            <p><em>Источник: <a href="#">Encyclopaedia Britannica</a></em></p>
+            <p><em>Статья была обновлена Эми Тикканен.</em></p>
+        </footer>
+    </main>
+</body>
+<style>
+    body {
+    font-family: sans-serif; /* Более современный шрифт */
+    line-height: 1.6; /* Улучшенная читаемость текста */
+    color: #333; /* Более приятный цвет текста */
+    background-color: #f4f4f4; /* Светлый фон */
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Центрирование контента по горизонтали */
+    align-items: center; /* Центрирование контента по вертикали */
+    min-height: 100vh; /* Занимает всю высоту экрана */
+}
+
+.container {
+    max-width: 800px; /* Ограничение ширины контента */
+    margin: 20px;
+    padding: 20px;
+    background-color: white; /* Белый фон для контента */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Легкая тень */
+    border-radius: 8px; /* Скругленные углы */
+    text-align: left; /* Выравнивание текста по левому краю */
+}
+
+h1,
+.subtitle {
+    text-align: center;
+}
+
+.subtitle {
+    font-weight: 500;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.image-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+img {
+    max-width: 100%; /* Адаптивное изображение */
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.actions {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #007bff; /* Синий цвет для кнопок */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: background-color 0.3s ease; /* Плавный переход цвета */
+}
+
+button:hover {
+    background-color: #0056b3; /* Более темный синий при наведении */
+}
+
+.meta,
+.source {
+    color: #777;
+    font-size: 0.9em;
+    margin-top: 20px;
+    text-align: center;
+}
+
+footer {
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+</style>
+
+</html>
