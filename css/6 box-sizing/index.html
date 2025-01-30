@@ -9,68 +9,101 @@
 </head>
 
 <body>
-    <div class="block1">
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus soluta mollitia voluptas
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab voluptatem fugiat veniam consequuntur sapiente
-            aliquid, corporis recusandae culpa, enim error similique. Facilis eius minima harum, recusandae ipsum maxime
-            modi architecto ut quae eum. Eum recusandae doloribus, saepe modi repudiandae nemo iusto alias blanditiis
-            praesentium necessitatibus ratione quam deleniti quibusdam pariatur!
-        </p>
-    </div>
+    <!-- <div class="block1">
+        <main>
+            Текст с инсет тенью
+        </main>
+    </div> -->
 
 
 
     <!-- <div class="block2">
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus soluta mollitia voluptas nesciunt
-        </p>
+        <main>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Voluptatibus soluta mollitia voluptas nesciunt
+        </main>
     </div> -->
-
+    <div class="inset-text">Внутренняя тень</div>
 
 </body>
 <style>
-    * {
+
+
+
+    /* * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-    }
+    } */
 
     body {
-        background-color: #333;
+        /* background-color: #333; */
     }
 
     .block1 {
         /* background-color: inherit; */
-        background-color: black;
-        color: snow;
-        width: 200px;
-        height: 200px;
-        margin: 20px auto;
-        padding: 20px;
+        /* background-color: gray; */
+        /* color: snow; */
+        /* width: 200px; */
+        /* height: 200px; */
+        /* margin: 20px auto; */
+        /* padding: 20px; */
         /* box-sizing: border-box; */
-        /* box-shadow: 0px 0px 30px 10px red;     */
-        /* box-shadow: -10px -10px 20px 10px red inset,
-        10px 10px 20px 10px blue inset,
-        10px 10px 20px 10px green, 
-        -10px -10px 20px 10px yellow; */
-        /* text-shadow: 2px 2px 3px red,
-        -2px 2px 3px blue,
-        4px 4px 3px green,
-        -4px -4px 3px gold; */
-        /* color: red; */
-
-
+        /* box-shadow:
+        10px 10px 15px 10px red,
+        -10px -10px 15px 10px blue,
+        ; */
+        /* box-shadow:
+        10px 10px 15px 0 red inset,
+        -10px -10px 15px 0 blue inset
+        ; */
+        /* font-size: 30px; */
+        /* text-shadow: */
+        /* 1px 1px 3px blue, */
+        /* -1px -1px 3px yellow; */
     }
+
+
 
     .block2 {
         margin: 20px auto;
         width: 200px;
         height: 200px;
-        background-color: lightgreen;
-        padding: 50px;
+        background-color: gray;
+        padding: 20px;
+        font-weight: 700;
         /* box-sizing: border-box; */
     }
+
+    .block1 {
+        position: relative;
+        font-size: 48px;
+        color: white;
+    }
+
+    .block1::before {
+        content: 'Текст с инсет тенью';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        color: black;
+        z-index: -1;
+        text-shadow: inset 1px 1px 5px black ;
+        ;
+    }
+
+   .inset-text {
+    font-size: 48px;
+    font-weight: bold;
+    color: transparent;
+    background: linear-gradient(45deg, #000, #333);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 4px rgba(209, 17, 17, 0.5), 2PX 2PX 4PX gold;
+}
 </style>
 
 </html>
