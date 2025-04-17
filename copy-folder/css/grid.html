@@ -6,7 +6,92 @@
     <title></title>
 </head>
 <body>
+
+    <article class="head">
+        <section class="grid-container">
+            <header class="grid-item block1">1</header>
+            <header class="grid-item block2">1</header>
+            <header class="grid-item block1">1</header>
+            <header class="grid-item block2">1</header>
+            <header class="grid-item block1">1</header>
+            <header class="grid-item block2">1</header>
+            <header class="grid-item block1">1</header>
+            <header class="grid-item block2">1</header>
+            <header class="grid-item block1">1</header>
+            <header class="grid-item block2">1</header>
+            <header class="grid-item block1">1</header>
+            <header class="grid-item block2">1</header>
+            <header class="grid-item block1">1</header>
+            <header class="grid-item block2">1</header>
+            <header class="grid-item block1">1</header>
+            
+        </section>
+        <section class="grid-container1">
+            <header class="grid-item block3"></header>
+            <header class="grid-item block3"></header>
+            <header class="grid-item block3"></header>
+            <header class="grid-item block3"></header>
+        </section>
+        <section class="grid-container2">
+            <header class="grid-item block4"></header>
+            <header class="grid-item block4"></header>
+            <header class="grid-item block4"></header>
+            <header class="grid-item block4"></header>
+            <header class="grid-item block4"></header>
+        </section>
+        <section class="grid-container3">
+            <header class="grid-item block5"></header>
+            <header class="grid-item block5"></header>
+            <header class="grid-item block5"></header>
+            <header class="grid-item block5"></header>
+            <header class="grid-item block5"></header>
+        </section>
+        <section class="grid-container4">
+            <header class="grid-item block6"></header>
+            <header class="grid-item block6"></header>
+            <header class="grid-item block6"></header>
+        </section>
+        <section class="grid-container5">
+            <header class="grid-item block7"></header>
+            <header class="grid-item block7"></header>
+            <header class="grid-item block7"></header>
+            <header class="grid-item block7"></header>
+        </section>
+        <section class="grid-container6">
+            <header class="grid-item block8"></header>
+            <header class="grid-item block8"></header>
+            <header class="grid-item block8"></header>
+            <header class="grid-item block8"></header>
+        </section>
+    </article>
     
-    
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            padding: 15px;
+            background-color: gray;
+        }
+
+        .grid-container{
+            display: grid;
+            gap: 2px;
+            grid-template-columns: repeat(5,20px);
+            grid-template-rows: repeat(3,20px);
+        }
+
+        .block1{
+            background-color: black;
+        }
+
+        .block2{
+            background-color: rgb(255, 255, 255);
+            color: white;
+        }
+
+    </style>
 </body>
 </html>
