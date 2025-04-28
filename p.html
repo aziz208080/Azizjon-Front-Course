@@ -13,93 +13,104 @@
 <body>
     <strong>Preview:</strong>
     <div class="container">
-        <div class="floating-stack">
-            <dl>
-                <dt>A</dt>
-                <dd>Aaban</dd>
-                <dd>Aabel</dd>
-                <dd>Aabheer</dd>
-                <dd>Aadam</dd>
+        <p class="main-l">A</p>
+        <p class="p-c">Aaban</p>
+        <p class="p-c">Aabel</p>
+        <p>Aabheer</p>
+        <p>Aadam</p>
 
-                <dt>B</dt>
-                <dd>Baabul</dd>
-                <dd>Baalaji</dd>
-                <dd>Baalkrishan</dd>
-                <dd>Baanke Bihaari</dd>
+        <p class="main-l">B</p>
+        <p class="p-c">Baabul</p>
+        <p class="p-c">Baalaji</p>
+        <p>Baalkrishan</p>
+        <p>Baanke Bihaari</p>
 
-                <dt>C</dt>
-                <dd>Caddam</dd>
-                <dd>Cameroon</dd>
-                <dd>Campbell</dd>
-                <dd>Cane</dd>
+        <p class="main-l">C</p>
+        <p class="p-c">Caddam</p>
+        <p class="p-c">Cameroon</p>
+        <p>Campbell</p>
+        <p>Cane</p>
 
-                <dt>D</dt>
-                <dd>Daanesh</dd>
-                <dd>Dadvar</dd>
-                <dd>Daghan</dd>
-                <dd>Daivya</dd>
-                <dd>Daamini</dd>
+        <p class="main-l">D</p>
+        <p class="p-c">Daanesh</p>
+        <p class="p-c">Dadvar</p>
+        <p>Daghan</p>
+        <p>Daivya</p>
+        <p>Daamini</p>
 
-                <dt>E</dt>
-                <dd>Eadmer</dd>
-                <dd>Earnest</dd>
-                <dd>Eddward</dd>
-                <dd>Edmond</dd>
-            </dl>
-        </div>
+        <p class="main-l">E</p>
+        <p class="p-c">Eadmer</p>
+        <p class="p-c">Earnest</p>
+        <p>Eddward</p>
+        <p>Edmond</p>
+    </div>
+
+    <div>
+        <p>
+            Lorem ipsum dolor sit amet.
+        </p>
     </div>
 </body>
 <style>
-    .container {
-        display: grid;
-        place-items: center;
-        min-height: 400px;
-    }
-
-    .floating-stack {
-        background: #3365a4;
-        color: #fff;
-        height: 50vh;
-        width: 320px;
-        border-radius: 1rem;
-        overflow-y: auto;
-    }
-
-    .floating-stack>dl {
-        margin: 0 0 1rem;
-        display: grid;
-        grid-template-columns: 2.5rem 1fr;
-        align-items: center;
-    }
-
-    .floating-stack dt {
-        position: sticky;
-        top: 0.5rem;
-        left: 0.5rem;
-        font-weight: bold;
-        background: #263238;
-        color: #cfd8dc;
-        height: 2rem;
-        width: 2rem;
-        border-radius: 50%;
-        padding: 0.25rem 1rem;
-        grid-column: 1;
-        display: inline-flex;
-        align-items: center;
+    body {
+        height: 98vh;
+        display: flex;
         justify-content: center;
-        box-sizing: border-box;
+        flex-direction: column;
+        align-items: center;
     }
 
-    .floating-stack dd {
-        grid-column: 2;
-        margin: 0;
-        padding: 0.75rem;
+    .container {
+        border-radius: 20px;
+        width: 300px;
+        height: 200px;
+        background-color: lightblue;
+        text-align: center;
+        overflow: auto;
     }
 
-    .floating-stack>dl:first-of-type>dd:first-of-type {
-        margin-top: 0.25rem;
+    .p-c {
+        position: relative;
+        left: -16px;
+    }
+
+    .main-l {
+        float: left;
+        background-color: black;
+        color: red;
+        padding: 8px 10px;
+        border-radius: 50%;
+        position: sticky;
+        left: 5px;
+        top: 5px;
+    }
+
+    :root {
+        /* font-size: 20px; */
+    }
+
+    html {
+        /* font-size: 15px; */
+    }
+
+    * {
+        /* padding: 0; */
+        /* margin: 0; */
+        /* box-sizing: border-box; */
+        /* font-size: 5px; */
+    }
+
+
+    div {
+        /* font-size: 10px; */
+    }
+
+    p {
+        /* font-size: 8px; */
+        /* font-size: 100%; */
+        /* font-size: 1em; */
+        /* font-size: 2rem; */
     }
 </style>
 
 </html>
-5555454
