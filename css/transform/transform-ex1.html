@@ -89,14 +89,25 @@
         color: snow;
         font-family: Impact;
     }
+
     .main p:hover {
         cursor: pointer;
-        transform: rotate(calc(360deg * 4));
+        animation: spin 0.01s linear infinite;
         box-shadow: 3px 3px 30px red,
             6px 6px 30px blue,  
             -6px -6px 30px red,
             -3px -3px 30px blue;
     }
+
+    @keyframes spin {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
 </style>
+
 
 </html>
