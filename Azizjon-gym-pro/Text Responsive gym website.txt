@@ -97,7 +97,7 @@ OUR
 SPECIAL PLAN
 
 .pricing__title | .pricing__number
-BASIC PACKAGE
+SPECIAL PLAN
 $120
 
 PREMIUM PACKAGE
