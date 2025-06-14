@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Css Lesson</title>
+    <link rel="shortcut icon" href="/img/logo/Gmail Logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body style="">
+
+    <h1 class="testclass">heading 1</h1>
+    <h1 id="testid1">heading 2</h1>
+
+    <h1>heading 3</h1>
+
+    <p class="testclass">paragraph 1</p>
+    <p id="testid1">paragraph 2</p>
+    <p>paragraph 3</p>
+
+
+
+    <main>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <div>
+            <p>Lorem ipsum dolor sit amet.</p>
+            <footer>
+                <p>Lorem ipsum dolor sit amet.</p>
+            </footer>
+        </div>
+    </main>
+    <br>
+    <br>
+    <button type="submit">button</button>
+    <input type="submit">
+</body>
+<style>
+    h1.testclass {
+        color: red;
+    }
+
+    p.testclass {
+        color: green;
+    }
+
+    h1#testid1 {
+        color: blue;
+    }
+
+    p#testid1 {
+        color: aqua;
+    }
+
+    button[type="submit"] {
+        /* background-color: #333; */
+        /* color: snow; */
+    }
+
+    input[type="submit"] {
+        /* background-color: darkgreen; */
+        /* color: snow; */
+    }
+
+    main div footer p {
+        /* color: red; */
+    }
+
+    main p {
+        /* color: red; */
+    }
+
+    main>p {
+        color: red;
+    }
+
+    main+button {
+        /* background-color: #333; */
+        /* color: snow; */
+    }
+
+    main~button {
+        /* background-color: #333; */
+        /* color: snow; */
+    }
+
+
+    button[type="submit"],
+    input[type="submit"] {
+        background-color: darkgreen;
+        color: snow;
+    }
+</style>
+
+</html>

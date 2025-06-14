@@ -581,7 +581,45 @@ color: transparent;
 
 .pricing__item{
   display: flex;
-  column-gap: ;
+  column-gap: center;
+  font-size: var(--small-font-size);
+}
+
+.pricing__item i{
+  font-size: 1.25rem;
+  color: var(--first-color);
+}
+
+.pricing__item-opacity{
+  opacity: .3;
+}
+
+.pricing__button{
+  background-color: var(--title-color);
+
+}
+
+.pricing__button:hover{
+  background-color: var(--title-color);
+}
+
+.pricing__card-astive{
+  background-color: var(--first-color);
+  border: 2px solid var(--first-color-light);
+}
+
+.pricing__card-active .pricing__shape{
+  background-color: var(--first-color-light);
+}
+
+.pricing__card-active .pricing__item i{
+  color: var(--title-color);
+}
+
+.pricing__card-active .pricing__title,
+.pricing__card-active .pricing__number,
+.pricing__card-active .pricing__item{
+  color: var(--title-color-black);
 }
 
 /*=============== CALCULATE ===============*/
