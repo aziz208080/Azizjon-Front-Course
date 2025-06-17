@@ -52,5 +52,24 @@ window.addEventListener('scroll', scrollHeader)
 
 /*=============== CALCULATE JS ===============*/
 
+const calculateform = document.getElementById('calculate-form'),
+      calculateCm = document.getElementById('calculate-input-cm'),
+      calculateKg = document.getElementById('calculate-input-kg'),
+      calculateMessage = document.getElementById('calculate-message')
+const calculateBmi = (e) =>{
+    e.preventDefault()
+
+    // Check if the fields have a value
+    if(calculateCm.value === '' || calculateKg.value === '' ){
+        // Add and remove color
+        calculateMessage.classList.remote('color-green')
+        calculateMessage.classList.add('color-red')
+
+        // Show message
+        calculateMassege
+    }
+}
+
+calculateform.addEventListener('submit', calculateBmi)
 
 /*=============== EMAIL JS ===============*/
