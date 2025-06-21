@@ -1,19 +1,19 @@
 /*=============== SHOW MENU ===============*/
 
 const navMenu = document.getElementById('nav-menu'),
-      navToggle = document.getElementById('nav-toggle'),
-      navClose = document.getElementById('nav-close')
+    navToggle = document.getElementById('nav-toggle'),
+    navClose = document.getElementById('nav-close')
 
 /* Menu show */
-if(navToggle){
-    navToggle.addEventListener('click', () =>{
+if (navToggle) {
+    navToggle.addEventListener('click', () => {
         navMenu.classList.add('show-menu')
     })
 }
 
 /* Menu hidden */
-if(navClose){
-    navClose.addEventListener('click', () =>{
+if (navClose) {
+    navClose.addEventListener('click', () => {
         navMenu.classList.remove('show-menu')
     })
 }
@@ -23,7 +23,7 @@ if(navClose){
 
 const navLink = document.querySelectorAll('.nav__link')
 
-const linkAction = () =>{
+const linkAction = () => {
     const navMenu = document.getElementById('nav-menu')
     // When we click on each nav__link, we remove the show-menu class
     navMenu.classList.remove('show-menu')
@@ -33,18 +33,18 @@ navLink.forEach(n => n.addEventListener('click', linkAction))
 
 /*=============== CHANGE BACKGROUND HEADER ===============*/
 
-const scrollHeader = () =>{
+const scrollHeader = () => {
     const header = document.getElementById('header')
     // Add a class if the bottom offset is greater than 50 of the viewport
-    this.scrollY >= 50 ? header.classList.add('bg-header') 
-                       : header.classList.remove('bg-header')
+    this.scrollY >= 50 ? header.classList.add('bg-header')
+        : header.classList.remove('bg-header')
 }
 window.addEventListener('scroll', scrollHeader)
 
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
 
 
-/*=============== SHOW SCROLL UP ===============*/ 
+/*=============== SHOW SCROLL UP ===============*/
 
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/
@@ -53,20 +53,29 @@ window.addEventListener('scroll', scrollHeader)
 /*=============== CALCULATE JS ===============*/
 
 const calculateform = document.getElementById('calculate-form'),
-      calculateCm = document.getElementById('calculate-input-cm'),
-      calculateKg = document.getElementById('calculate-input-kg'),
-      calculateMessage = document.getElementById('calculate-message')
-const calculateBmi = (e) =>{
+    calculateCm = document.getElementById('calculate-input-cm'),
+    calculateKg = document.getElementById('calculate-input-kg'),
+    calculateMessage = document.getElementById('calculate-message')
+const calculateBmi = (e) => {
     e.preventDefault()
 
     // Check if the fields have a value
-    if(calculateCm.value === '' || calculateKg.value === '' ){
+    if (calculateCm.value === '' || calculateKg.value === '') {
         // Add and remove color
-        calculateMessage.classList.remote('color-green')
+        calculateMessage.classList.remove('color-green')
         calculateMessage.classList.add('color-red')
 
         // Show message
-        calculateMassege
+        calculateMessage.textContent = 'Fill in the Height and Weight 👩‍💻'
+
+        // Remove message three seconds
+        setTimeout(() =>{
+            calculateMessage.textContent = ''
+        }, 3000)
+    } else{
+        // BMI Formula
+        const cm = calculateCm.value / 100,
+              kg = calculateKg
     }
 }
 
