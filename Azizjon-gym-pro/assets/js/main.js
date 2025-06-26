@@ -75,7 +75,16 @@ const calculateBmi = (e) => {
     } else{
         // BMI Formula
         const cm = calculateCm.value / 100,
-              kg = calculateKg
+              kg = calculateKg.value,
+              bmi = Math.round(kg / (cm * cm))
+
+        // Show your health status
+        if(bmi <18.5){
+            // Add color and display message
+            calculateMessage.classList.add('color-green')
+            calculateMessage.textContent = `Your BMI is ${bmi} and you are skinny 😔`
+        } 
+
     }
 }
 
