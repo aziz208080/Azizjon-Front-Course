@@ -83,7 +83,22 @@ const calculateBmi = (e) => {
             // Add color and display message
             calculateMessage.classList.add('color-green')
             calculateMessage.textContent = `Your BMI is ${bmi} and you are skinny 😔`
-        } 
+        } else if(bmi < 25){
+            calculateMessage.classList.add('color-green')
+            calculateMessage.textContent = `Your BMI is ${bmi}and you are healthy🥳`
+        } else{
+            calculateMessage.classList.add('color-green')
+            calculateMessage.textContent = `Your BMI is ${bmi}and you are overweight😔`
+        }
+
+        // To clear the input field
+        calculateCm.value = ''
+        calculateKg.value = ''
+
+        // Remove message four seconds
+        setTimeout(() =>{
+            calculateMessage.textContent = ''
+        }, 4000)
 
     }
 }
