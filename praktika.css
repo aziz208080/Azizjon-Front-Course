@@ -46,7 +46,7 @@ ul {
 .header {
 	grid-area: header;
 	padding: 15px;
-	background-color: #794f45;
+	background-color: #457079;
 	align-items: center;
 	display: grid;
 	grid-template: 1fr / 1fr minmax(auto, 300px) minmax(auto, 1100px) 1fr;
@@ -55,7 +55,7 @@ ul {
 	width: 70px;
 	height: 70px;
 	border-radius: 50%;
-	background-color: #fff;
+	background-color: #f8fafd;
 	grid-column: 2 / 3;
 }
 .header__menu {
@@ -86,7 +86,7 @@ ul {
 	padding: 30px 15px;
 }
 .sidebar {
-	background-color: #7a956b;
+	background-color: #457079;
 	padding: 20px;
 	margin: 0px 0px 30px 0px;
 }
@@ -196,11 +196,12 @@ ul {
 	font-size: 12px;
 	text-decoration: none;
 	justify-self: start;
+	text-align: center;
 }
 /* ================ */
 .footer {
 	padding: 15px;
-	background-color: #77608d;
+	background-color: #457079;
 	grid-area: footer;
 	align-items: center;
 	display: grid;

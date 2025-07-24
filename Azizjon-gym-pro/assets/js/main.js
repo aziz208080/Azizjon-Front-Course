@@ -69,24 +69,24 @@ const calculateBmi = (e) => {
         calculateMessage.textContent = 'Fill in the Height and Weight 👩‍💻'
 
         // Remove message three seconds
-        setTimeout(() =>{
+        setTimeout(() => {
             calculateMessage.textContent = ''
         }, 3000)
-    } else{
+    } else {
         // BMI Formula
         const cm = calculateCm.value / 100,
-              kg = calculateKg.value,
-              bmi = Math.round(kg / (cm * cm))
+            kg = calculateKg.value,
+            bmi = Math.round(kg / (cm * cm))
 
         // Show your health status
-        if(bmi <18.5){
+        if (bmi < 18.5) {
             // Add color and display message
             calculateMessage.classList.add('color-green')
             calculateMessage.textContent = `Your BMI is ${bmi} and you are skinny 😔`
-        } else if(bmi < 25){
+        } else if (bmi < 25) {
             calculateMessage.classList.add('color-green')
             calculateMessage.textContent = `Your BMI is ${bmi}and you are healthy🥳`
-        } else{
+        } else {
             calculateMessage.classList.add('color-green')
             calculateMessage.textContent = `Your BMI is ${bmi}and you are overweight😔`
         }
@@ -96,7 +96,7 @@ const calculateBmi = (e) => {
         calculateKg.value = ''
 
         // Remove message four seconds
-        setTimeout(() =>{
+        setTimeout(() => {
             calculateMessage.textContent = ''
         }, 4000)
 
@@ -106,3 +106,35 @@ const calculateBmi = (e) => {
 calculateform.addEventListener('submit', calculateBmi)
 
 /*=============== EMAIL JS ===============*/
+const contactForm = document.getElementById('contact-form'),
+    contactMessage = document.getElementById('contact-message'),
+    contactUser = document.getElementById('contact-user')
+
+const sendEmail = (e) => {
+    e.preventDefault()
+
+    // Check if the field has a value
+    if (contactUser.value === '') {
+        // Add and remove color
+        contactMessage.classList.remove('color-green')
+        contactMessage.classList.add('color-red')
+
+        // Show message
+        contactMessage.textContent = 'You must enter your email ☝️'
+
+        // Remove message three seconds
+        setTimeout(() => {
+            contactMessage.taxtContent = ''
+        }, 3000)
+    } else {
+        // serviceID - templateID - #form - publicKey
+        emailjs.sendForm('service_4yb6fle', 'template_tjpjruf', '#contact-form', 'BwOD9PfCKMwtnNjNw')
+            .then(() => {
+                // Show message and add color
+                contactMessage.classList.add('color-green')
+                contactMessage.textContent = 'You registered successfully 💪'
+            })
+    }
+}
+
+contactForm.addEventListener('submit', sendEmail)
