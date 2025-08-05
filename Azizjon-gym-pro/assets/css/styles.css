@@ -903,12 +903,15 @@ color: transparent;
     width: 50%;
   }
 
-  .home__container{
+  .home__container,
+  .choose__container{
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
   }
 
-  .home__data{
+  .home__data,
+  .choose__content,.section__data,
+  .choose__description{
     text-align: initial;
 }
 
@@ -918,6 +921,23 @@ color: transparent;
 
 .program__container{
   grid-template-columns: repeat(2, 225px);
+  gap: 2.5rem;
+}
+
+.choose__content{
+  order: 1;
+}
+
+.choose__data{
+  justify-content: flex-start;
+}
+
+.choose__content .section__title{
+  justify-content: initial;
+}
+
+.pricing__container{
+  grid-template-columns: repeat(2, 285px);
   gap: 2.5rem;
 }
 
