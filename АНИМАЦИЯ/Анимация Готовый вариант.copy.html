@@ -1,4 +1,12 @@
-<canvas id="canvas"></canvas>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>copy</title>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
 <style>
 body,
 html {
@@ -238,7 +246,7 @@ class DustParticle {
 
   draw(ctx) {
     // Draw faint circles
-    ctx.fillStyle = `hsla(${this.hue}, 30%, 70%, 0.3)`;
+    // ctx.fillStyle = `hsla(${this.hue}, 30%, 70%, 0.3)`;
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
     ctx.fill();
@@ -399,7 +407,7 @@ canvas.addEventListener("click", (e) => {
   for (let i = 0; i < 15; i++) {
     const angle = Math.random() * Math.PI * 2;
     const speed = Math.random() * 2 + 1;
-    // const particle = new Particle(clickX, clickY, true);
+    const particle = new Particle(clickX, clickY, true);
     particle.vx = Math.cos(angle) * speed;
     particle.vy = Math.sin(angle) * speed;
     fireworkParticles.push(particle);
@@ -414,3 +422,6 @@ resizeCanvas();
 animate();
 
 </script>
+
+</body>
+</html>
