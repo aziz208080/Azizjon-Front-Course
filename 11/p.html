@@ -1,0 +1,116 @@
+<!--License: https://bit.ly/3GjrtVF-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>
+        Using HTML, CSS create a list with floating headings for each section
+    </title>
+</head>
+
+<body>
+    <strong>Preview:</strong>
+    <div class="container">
+        <p class="main-l">A</p>
+        <p class="p-c">Aaban</p>
+        <p class="p-c">Aabel</p>
+        <p>Aabheer</p>
+        <p>Aadam</p>
+
+        <p class="main-l">B</p>
+        <p class="p-c">Baabul</p>
+        <p class="p-c">Baalaji</p>
+        <p>Baalkrishan</p>
+        <p>Baanke Bihaari</p>
+
+        <p class="main-l">C</p>
+        <p class="p-c">Caddam</p>
+        <p class="p-c">Cameroon</p>
+        <p>Campbell</p>
+        <p>Cane</p>
+
+        <p class="main-l">D</p>
+        <p class="p-c">Daanesh</p>
+        <p class="p-c">Dadvar</p>
+        <p>Daghan</p>
+        <p>Daivya</p>
+        <p>Daamini</p>
+
+        <p class="main-l">E</p>
+        <p class="p-c">Eadmer</p>
+        <p class="p-c">Earnest</p>
+        <p>Eddward</p>
+        <p>Edmond</p>
+    </div>
+
+    <div>
+        <p>
+            Lorem ipsum dolor sit amet.
+        </p>
+    </div>
+</body>
+<style>
+    body {
+        height: 98vh;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container {
+        border-radius: 20px;
+        width: 300px;
+        height: 200px;
+        background-color: lightblue;
+        text-align: center;
+        overflow: auto;
+    }
+
+    .p-c {
+        position: relative;
+        left: -16px;
+    }
+
+    .main-l {
+        float: left;
+        background-color: black;
+        color: red;
+        padding: 8px 10px;
+        border-radius: 50%;
+        position: sticky;
+        left: 5px;
+        top: 5px;
+    }
+
+    :root {
+        /* font-size: 20px; */
+    }
+
+    html {
+        /* font-size: 15px; */
+    }
+
+    * {
+        /* padding: 0; */
+        /* margin: 0; */
+        /* box-sizing: border-box; */
+        /* font-size: 5px; */
+    }
+
+
+    div {
+        /* font-size: 10px; */
+    }
+
+    p {
+        /* font-size: 8px; */
+        /* font-size: 100%; */
+        /* font-size: 1em; */
+        /* font-size: 2rem; */
+    }
+</style>
+
+</html>
