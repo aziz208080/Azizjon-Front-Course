@@ -1,16 +1,4 @@
-<canvas id="heart"></canvas>
-<style>
-canvas {
-  position: absolute;
-  left:0;
-  top: 0;
-  width: 100vw;
-  height: 100%;
-  background-color: rgba(0,0,0,.2);
-}
-</style>
-<script>
-    window.requestAnimationFrame =
+window.requestAnimationFrame =
     window.__requestAnimationFrame ||
         window.requestAnimationFrame ||
         window.webkitRequestAnimationFrame ||
@@ -156,5 +144,3 @@ var init = function () {
 var s = document.readyState;
 if (s === 'complete' || s === 'loaded' || s === 'interactive') init();
 else document.addEventListener('DOMContentLoaded', init, false);
-
-</script>
