@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Анимация сердца</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #000;
+            overflow: hidden;
+        }
+
+        section {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #000;
+            touch-action: none;
+        }
+
+        svg {
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 100vh;
+            touch-action: none;
+        }
+
+        /* Медиа-запросы для адаптивности */
+        @media (max-width: 768px) {
+            svg {
+                max-height: 90vh;
+            }
+        }
+
+        @media (max-width: 480px) {
+            svg {
+                max-height: 80vh;
+            }
+        }
+
+        @media (orientation: landscape) and (max-height: 500px) {
+            svg {
+                max-height: 90vh;
+                max-width: 90%;
+            }
+        }
+
+        /* Стили из оригинального файла */
+        .st1{fill:#FF5953;}
+        .st2{fill:#FE5B4E;}
+        .st3{fill:#FF826E;}
+        .st4{fill:#9B1121;}
+        .st5{fill:#CE464A;}
+        .st6{fill:#C02935;}
+        .st7{fill:#FF8376;}
+        .st8{fill:#590F1a;}
+        .st9{fill:#AB3A2F;}
+        .st10{fill:#CC4E4D;}
+        .st11{fill:#C62334;}
+        .st12{fill:#9E283C;}
+        .st13{fill:#BE0E30;}
+        .st14{fill:#B21128;}
+        .st15{fill:#C92130;}
+        .st16{fill:#A40C19;}
+        .st17{fill:#AC1B2D;}
+        .st18{fill:#FF464E;}
+        .st19{fill:#D1363D;}
+        .st20{fill:#C12238;}
+        .st21{fill:#B01C2A;}
+        .st22{fill:#D53840;}
+        .st23{fill:#BA6B5A;}
+        .st24{fill:#E8857E;}
+        .st25{fill:#703E34;}
+        .st26{fill:#B96353;}
+        .st27{fill:#B35F59;}
+        .st28{fill:#8A4841;}
+        .st29{fill:#B44A4E;}
+        .st30{fill:#DD6A56;}
+        .st31{fill:#FF8778;}
+        .st32{fill:#D27264;}
+        .st33{fill:#E68271;}
+        .st34{fill:#AE3D4C;}
+        .st35{fill:#C64048;}
+        .st36{fill:#7C5565;}
+        .st37{fill:#E85954;}
+        .st38{fill:#7C5565;}
+        .st39{fill:#F26C5F;}
+        .st40{fill:#CF4B4D;}
+        .st41{fill:#B1271C;}
+        .st42{fill:#962E28;}
+        .st43{fill:#96332D;}
+        .st44{fill:transparent;}
+        .st45{fill:#92353D;}
+        .st46{fill:#99000A;}
+        .st47{fill:#9C0E10;}
+        .st48{fill:#601E26;}
+        .st49{fill:#863127;}
+        .st50{fill:#A93B46;}
+        .st51{fill:#A14B49;}
+        .st52{fill:#853435;}
+        .st53{fill:#7C5565;}
+        .st54{fill:#5D1D22;}
+        .st55{fill:#80535C;}
+        .st56{fill:#590F1a;}
+        .st57{fill:#79292E;}
+        .st58{fill:#8B4044;}
+        .st59{fill:#742326;}
+        .st60{fill:#74252A;}
+        .st61{fill:#892523;}
+        .st62{fill:#9C1817;}
+        .st63{fill:#4B1016;}
+        .st64{fill:#D45A4F;}
+        .st65{fill:#4D141C;}
+        .st66{fill:#7B181C;}
+        .st67{fill:#852A20;}
+        .st68{fill:#C43538;}
+        .st69{fill:#922725;}
+        .st70{fill:#890A13;}
+        .st71{fill:#E7433E;}
+        .st72{fill:#AE3240;}
+        .st73{fill:#771A1E;}
+        .st74{fill:#8B0210;}
+        .st75{fill:#6F090A;}
+        .st76{fill:#7E0007;}
+        .st77{fill:#680703;}
+        .st78{fill:#821113;}
+        .st79{fill:transparent;}
+        .st80{fill:#700800;}
+        .st81{fill:#760708;}
+        .st82{fill:#73060B;}
+        .st83{fill:#590904;}
+        .st84{fill:#7C5565;}
+        .st85{fill:#7C5565;}
+        .st86{fill:#C74D50;}
+        .st87{fill:#6F282A;}
+        .st88{fill:#7C5565;}
+        .st89{fill:#EB4B49;}
+        .st90{fill:#A0303C;}
+        .st91{fill:#F65350;}
+        .st92{fill:#E15853;}
+        .st93{fill:#7C5565;}
+        .st94{fill:#6B4957;}
+        .st95{fill:#E94945;}
+        .st96{fill:#C13E43;}
+        .st97{fill:#FA5443;}
+        .st98{fill:#D63937;}
+        .st99{fill:#FD6D5F;}
+        .st100{fill:#D15A49;}
+        .st101{fill:#C03937;}
+        .st102{fill:#C15050;}
+        .st103{fill:#FF8F7F;}
+        .st104{fill:#DC4434;}
+        .st105{fill:#87000A;}
+        .st106{fill:#760D18;}
+        .st107{fill:#C62D29;}
+        .st108{fill:#F65146;}
+        .st109{fill:#84151A;}
+        .st110{fill:#FF4B51;}
+        .st111{fill:#FF6B5F;}
+        .st112{fill:#FF7373;}
+        .st113{fill:#DD4145;}
+        .st114{fill:#AC162C;}
+        .st115{fill:#BC232B;}
+        .st116{fill:#B80013;}
+        .st117{fill:#8F0A1B;}
+        .st118{fill:#B71E2B;}
+        .st119{fill:#E75B4D;}
+        .st120{fill:#C96459;}
+        .st121{fill:#FF7A74;}
+        .st122{fill:#EF5E54;}
+        .st123{fill:#FF5348;}
+        .st124{fill:#921F21;}
+        .st125{fill:#8E2329;}
+        .st126{fill:#691D24;}
+        .st127{fill:#8F1520;}
+        .st128{fill:#7E222B;}
+        .st129{fill:#871C23;}
+        .st130{fill:transparent;}
+        .st131{fill:#AB2F37;}
+        .st132{fill:#82242E;}
+        .st133{fill:#670F1A;}
+        .st134{fill:#FE796B;}
+        .st135{fill:#FF8273;}
+        .st136{fill:#FE7971;}
+        .st137{fill:#841E21;}
+        .st138{fill:#994A53;}
+        .st139{fill:#7E3334;}
+        .st140{fill:#B0433D;}
+        .st141{fill:#BA5568;}
+        .st142{fill:#901411;}
+        .st143{fill:#9B1C21;}
+        .st144{fill:#C43437;}
+        .st145{fill:#942223;}
+        .st146{fill:#A22635;}
+        .st147{fill:#932729;}
+        .st148{fill:#941325;}
+        .st149{fill:#C03D49;}
+        .st150{fill:#B33D50;}
+        .st151{fill:#72101B;}
+        .st152{fill:#9C1221;}
+        .st153{fill:#371B1B;}
+        .st154{fill:#AB1D29;}
+        .st155{fill:#541017;}
+        .st156{fill:#D73340;}
+        .st157{fill:#B71E2E;}
+        .st158{fill:#C53943;}
+        .st159{fill:#AC2745;}
+        .st160{fill:#A63B49;}
+        .st161{fill:#BF2B3B;}
+        .st162{fill:#B50325;}
+        .st163{fill:#93090F;}
+        .st164{fill:#AA1E20;}
+        .st165{fill:#8D000D;}
+        .st166{fill:#7C000A;}
+        .st167{fill:#893530;}
+        .st168{fill:#87091E;}
+        .st169{fill:#77000F;}
+        .st170{fill:#A31119;}
+        .st171{fill:#7F161C;}
+        .st172{fill:#A1122B;}
+        .st173{fill:#AA1226;}
+        .st174{fill:#FA5055;}
+        .st175{fill:#9C1528;}
+        .st176{fill:#FE6466;}
+        .st177{fill:#860B12;}
+        .st178{fill:#810515;}
+        .st179{fill:#88211B;}
+        .st180{fill:#590F1a;}
+        .st181{fill:#951528;}
+        .st182{fill:#3A181E;}
+        .st183{fill:#932923;}
+        .st184{fill:#7C5565;}
+        .st185{fill:#9D4640;}
+        .st186{fill:#9C4445;}
+        .st187{fill:#A3252C;}
+        .st188{fill:#7C5565;}
+        .st189{fill:#A33238;}
+        .st190{fill:#B74145;}
+        .st191{fill:#FF9E95;}
+        .st192{fill:#8C352D;}
+        .st193{fill:#A97155;}
+        .st194{fill:#933F35;}
+        .st195{fill:#C57464;}
+        .st196{fill:#E09E88;}
+        .st197{fill:#904430;}
+        .st198{fill:#FB6F67;}
+        .st199{fill:#FF5049;}
+        .st200{fill:#CF2D39;}
+        .st201{fill:#BE2D3A;}
+        .st202{fill:#A5151D;}
+        .st203{fill:#931F15;}
+        .st204{fill:#C3323F;}
+        .st205{fill:#7C0D1F;}
+        .st206{fill:#371B1B;}
+        .st207{fill:none;}
+
+
+        .low-poly {
+            z-index: 200;
+            -webkit-transform-origin: center;
+            transform-origin: center;
+            -webkit-animation: pulse-grow-main 0s ease-in-out 4s infinite alternate;
+            animation: pulse-grow-main 0s ease-in-out 4s infinite alternate; /* 0.8*/
+            opacity: 1;
+        }
+
+
+        .low-poly * {
+            -webkit-animation: fill-ani 2s ease-in 3s backwards, pulse-grow-main 2.5s ease-out 4s infinite alternate;
+            animation: fill-ani 2s ease-in 3s backwards, pulse-grow-main 0s ease-out 0s infinite alternate;
+            stroke:transparent;
+            stroke-width:1px;
+            fill-opacity:1;
+            stroke-dasharray: 2000;
+            stroke-dashoffset: 0 ;
+            transform-origin: 50%;
+        }
+
+        @-webkit-keyframes fill-ani {
+            from {
+                fill-opacity:0;
+                stroke:#931F15;
+                stroke-width:1px;
+                stroke-dashoffset: 2000;
+            }
+        }
+
+        @keyframes fill-ani {
+            from {
+                fill-opacity:0;
+                stroke:#931F15;
+                stroke-width:1px;
+                stroke-dashoffset: 2000;
+            }
+        }
+
+        /* TOP RIGHT */
+        .st24, .st25, .st26, .st27, .st29, .st31, .st37, .st40, .st43, .st112, .st130, .st133, .st134, .st135, .st140, .st144, .st145, .st147, .st157, .st189, .st190, .st191, .st197, .st340, .st341, .st342, .st343, .st344, .st345 {
+            -webkit-transform-origin: center;
+            transform-origin: center;
+            -webkit-animation: fill-ani 2s ease-in 2.5s backwards, pulse-grow-top .5s ease-in-out 3.5s infinite alternate;
+            animation: fill-ani 2s ease-in 2.5s backwards, pulse-grow-top .5s ease-in-out 3.5s infinite alternate;
+            display: block;
+        }
+
+        .st190 {
+            -webkit-animation: fill-ani 2s ease-in 2.5s backwards, pulse-grow-top-192 .5s ease-in-out 3.5s infinite alternate;
+            animation: fill-ani 2s ease-in 2.5s backwards, pulse-grow-top-192 .5s ease-in-out 3.5s infinite alternate;
+        }
+        /* TOP RIGHT */
+
+
+        /* TOP LEFT */
+        .st94, .st102, .st104, .st209, .st215, .st216, .st217, .st221, .st254, .st257, .st272, .st273, .st274, .st275, .st276, .st277, .st279, .st280, .st281, .st285, .st290, .st291, .st292, .st293, .st295, .st299, .st312, .st319, .st325, .st327, .st331, .st335 {
+            -webkit-transform-origin: center;
+            transform-origin: center;
+            -webkit-animation: fill-ani 2s ease-in 2s backwards, pulse-grow-top .5s ease-in-out 3s infinite alternate;
+            animation: fill-ani 2s ease-in 2s backwards, pulse-grow-top .5s ease-in-out 3s infinite alternate;
+            display: block;
+        }
+        /* TOP LEFT */
+
+
+        /* BOTTOM */
+        .st84, .st85, .st86, .st87, .st88, .st89, .st90, .st91, .st92, .st93, .st96, .st106, .st107, .st108, .st109, .st110, .st111, .st113, .st116, .st119, .st120, .st122, .st124, .st125, .st126, .st127, .st128, .st152, .st154, .st159, .st160, .st161, .st162, .st163, .st164, .st165, .st168, .st169, .st194, .st195, .st210, .st212, .st214, .st218, .st220, .st222, .st223, .st224, .st225, .st226, .st228, .st229, .st230, .st231, .st253, .st262, .st263, .st264, .st265, .st266, .st289, .st294, .st296, .st297, .st298, .st300, .st302, .st304, .st305, .st306, .st307, .st308, .st309, .st310, .st311, .st313, .st314, .st316, .st317, .st318, .st320, .st321, .st322, .st323, .st326, .st329, .st349, .st350, .st351, .st352, .st353 {
+            -webkit-transform-origin: center;
+            transform-origin: center;
+            -webkit-animation: fill-ani 2s ease-in 3s backwards, pulse-grow-bottom .5s ease-in-out 3s infinite alternate;
+            animation: fill-ani 2s ease-in 3s backwards, pulse-grow-bottom .5s ease-in-out 3s infinite alternate;
+            display: block;
+        }
+        /* BOTTOM */
+
+
+
+        /* Pulse Grow */
+
+
+
+        @-webkit-keyframes pulse-grow-main {
+            to {
+                -webkit-transform: scale(.996);
+                transform: scale(.996);
+            }
+        }
+
+
+
+        @keyframes pulse-grow-main {
+            to {
+                -webkit-transform: scale(.996);
+                transform: scale(.996);
+            }
+        }
+
+
+        @-webkit-keyframes pulse-grow-top-192 {
+            to {
+                -webkit-transform: scale(1.04);
+                transform: scale(1.04);
+            }
+        }
+
+        @keyframes pulse-grow-top-192 {
+            to {
+                -webkit-transform: scale(1.04);
+                transform: scale(1.04);
+            }
+        }
+
+
+
+
+        @-webkit-keyframes pulse-grow-top {
+            to {
+                -webkit-transform: scale(1.09);
+                transform: scale(1.09);
+            }
+        }
+
+
+
+
+        @keyframes pulse-grow-top {
+            to {
+                -webkit-transform: scale(1.09);
+                transform: scale(1.09);
+            }
+        }
+
+        @-webkit-keyframes pulse-grow-bottom {
+            to {
+                -webkit-transform: scale(1.09);
+                transform: scale(1.09);
+            }
+        }
+
+        @keyframes pulse-grow-bottom {
+            to {
+                -webkit-transform: scale(1.09);
+                transform: scale(1.09);
+            }
+        }
+
+
+        @-webkit-keyframes opacity {
+            from {
+                stroke:transparent;
+                stroke-width:1px;
+                fill-opacity:0;
+                stroke-dasharray: 2000;
+                stroke-dashoffset: 0 ;
+            }
+        }
+
+
+        @keyframes opacity {
+            from {
+                stroke:transparent;
+                stroke-width:1px;
+                fill-opacity:0;
+                stroke-dasharray: 2000;
+                stroke-dashoffset: 0 ;
+            }
+        }
+
+        .st211 {
+            stroke:transparent;
+            stroke-width:1px;
+            fill-opacity:1;
+            stroke-dasharray: 2000;
+            stroke-dashoffset: 0 ;
+            -webkit-animation: opacity 2s ease-in 3s backwards;
+            animation: opacity 2s ease-in 3s backwards;
+        }
+
+        .st328 {
+            stroke:transparent;
+            stroke-width:1px;
+            fill-opacity:1;
+            stroke-dasharray: 2000;
+            stroke-dashoffset: 0 ;
+            -webkit-animation: opacity 2s ease-in 3s backwards;
+            animation: opacity 2s ease-in 3s backwards;
+        }
+
+        .st146, .st167 {
+            -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+            -webkit-transform-origin: center;
+            transform-origin: center;
+            -webkit-animation: fill-ani 2s ease-in 3s backwards;
+            animation: fill-ani 2s ease-in 3s backwards;
+        }
+
+        .st256 {
+            -webkit-transform-origin: center;
+            transform-origin: center;
+            -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+            -webkit-animation: fill-ani 2s ease-in 3s backwards;
+            animation: fill-ani 2s ease-in 3s backwards;
+        }
+
+        .st149 {
+            -webkit-transform-origin: bottom;
+            transform-origin: bottom;
+            -webkit-transform: scale(1.3);
+            transform: scale(1.3);
+            -webkit-animation: fill-ani 2s ease-in 3s backwards;
+            animation: fill-ani 2s ease-in 3s backwards;
+        }
+
+        .st347 {
+            -webkit-transform-origin: center;
+            transform-origin: center;
+            -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+            -webkit-animation: fill-ani 2s ease-in 3s backwards;
+            animation: fill-ani 2s ease-in 3s backwards;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            viewBox="0 0 1194.13477 1200" style="enable-background:new 0 0 1194.13477 1200;" xml:space="preserve">
+
+            <defs>
+                <filter id="polycleaner" color-interpolation-filters="sRGB">
+                <feComponentTransfer>
+                    <feFuncA type="table" tableValues="0 0.5 1 1" />
+                </feComponentTransfer>
+                </filter>
+            </defs>
+            
+            <g id="low-poly" class='low-poly' stroke-width="0" stroke-linejoin="round" filter="url(#polycleaner)">
+                <g filter="url(#polycleaner)">
+                    <polygon class="st347" points="725.3847,693.75 787.8847,706.25 737.8847,631.25 "/>
+
+                
+                <polygon class="st146" points="669.1347,675 706.6347,587.5 650.3847,600 "/>
+                <!-- Blacks-->
+                <polygon class="st28" points="700.3847,543.75 700.3847,512.5 700.3847,506.25 706.6347,487.5 712.64435,475.48077 
+                        700.3847,487.5 687.8847,518.75 687.8847,555.97827 688.1347,556.25 687.8847,555.97827 687.8847,556.25 706.6347,587.5 
+                        719.1347,593.75 706.6347,568.75 "/>
+                <polygon class="st30" points="737.8847,631.25 750.3847,625 737.8847,612.5 719.46362,594.07892 725.3847,618.75 "/>
+                <polygon class="st68" points="581.6347,381.25 587.8656,393.71179 588.1347,393.75 587.8847,394.12128 587.8847,406.25 
+                        587.8847,412.5 594.1347,400 594.1347,381.25 588.1347,368.75 587.81702,368.88538 "/>
+                <polygon class="st138" points="790.5163,468.42108 788.73035,467.23047 788.14758,468.71716 "/>
+                <polygon class="st156" points="806.8822,637.62378 806.6347,637.5 800.3847,637.5 787.8847,637.5 775.3847,637.5 806.6347,650 "
+                        />
+                <polygon class="st204" points="812.8847,493.75 813.25598,494.12128 813.36676,493.80182 813.1347,493.75 831.6347,487.5 
+                        800.3847,475 "/>
+                <polygon class="st227" points="456.88455,243.77081 456.80618,243.76428 456.60971,243.79999 450.38474,256.25 444.13474,268.75 
+                        456.63474,268.75 "/>
+                <polygon class="st278" points="362.87363,599.8446 362.88474,600 362.90622,599.86395 "/>
+                <polygon class="st301" points="444.13474,381.25 450.38474,393.75 450.38474,312.5 456.63474,268.75 444.13474,268.75 
+                        444.13474,281.25 444.13474,300 444.13474,331.25 444.13474,343.75 437.88474,350 444.13474,356.25 "/>
+                <polygon class="st354" points="337.88474,637.5 375.38474,606.25 425.38474,556.25 444.13474,543.75 487.88474,500 
+                494.13474,487.5 494.13474,475 481.63474,487.5 475.43436,499.90082 469.13474,506.25 456.63474,512.5 450.38474,518.75 
+                437.83511,525.04962 362.90622,599.86395 "/>
+                <!-- Blacks-->
+                
+                
+                
+                    
+                
+                <!-- top left -->
+                <polygon class="st219" points="375.38474,393.75 350.63474,393.75 437.88474,350 356.63474,362.5 350.38474,393.75 
+                        331.63474,406.25 387.88474,393.75 "/>
+                <!-- top left -->
+            </g>
+        </svg>
+    </section>
+
+    <script>
+        // Обработчик для адаптивности на мобильных устройствах
+        document.addEventListener('DOMContentLoaded', function() {
+            // Предотвращение скролла и масштабирования на мобильных устройствах
+            document.addEventListener('touchmove', function(e) {
+                e.preventDefault();
+            }, { passive: false });
+
+            // Обработчик изменения ориентации устройства
+            window.addEventListener('orientationchange', function() {
+                setTimeout(function() {
+                    // Пересчет размеров SVG при изменении ориентации
+                    const svg = document.querySelector('svg');
+                    if (svg) {
+                        // Обновление размеров SVG для адаптивности
+                        const section = document.querySelector('section');
+                        const sectionWidth = section.clientWidth;
+                        const sectionHeight = section.clientHeight;
+                        
+                        // Определение оптимального размера для SVG
+                        if (window.innerWidth < window.innerHeight) {
+                            // Портретная ориентация
+                            svg.style.maxHeight = '80vh';
+                        } else {
+                            // Ландшафтная ориентация
+                            svg.style.maxHeight = '90vh';
+                            svg.style.maxWidth = '90%';
+                        }
+                    }
+                }, 300); // Задержка для корректной обработки изменения ориентации
+            });
+        });
+    </script>
+</body>
+</html>
