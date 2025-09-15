@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Ваше Имя — Портфолио</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Ваше имя — разработчик. Проекты, контакты, ссылки.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg:#0f1220; --card:#171a2b; --text:#e8ecf1; --muted:#a7b0c0; --accent:#7c5cff; }
+    * { box-sizing:border-box }
+    body { margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial; background:linear-gradient(180deg,#0f1220 0%,#0b0e1a 100%); color:var(--text); }
+    a { color:var(--accent); text-decoration:none }
+    a:hover { text-decoration:underline }
+    .container { max-width:1100px; margin:0 auto; padding:24px }
+    header { display:flex; align-items:center; justify-content:space-between; gap:16px; padding:16px 0 }
+    .brand { display:flex; align-items:center; gap:12px }
+    .brand img { width:40px; height:40px; border-radius:50%; object-fit:cover; border:1px solid #2a2f45 }
+    .nav a { color:var(--muted); margin-left:16px }
+    .hero { padding:56px 0 24px }
+    .title { font-size:40px; font-weight:700; line-height:1.1; margin:0 0 12px }
+    .subtitle { color:var(--muted); font-size:18px; margin:0 0 20px; max-width:800px }
+    .cta { display:flex; gap:12px; flex-wrap:wrap }
+    .btn { background:var(--accent); color:white; padding:12px 16px; border-radius:10px; font-weight:600; border:0; cursor:pointer }
+    .btn.secondary { background:#242842; color:var(--text) }
+    section { padding:28px 0 }
+    h2 { margin:0 0 16px; font-size:22px }
+    .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px }
+    .card { background:var(--card); border:1px solid #22263b; border-radius:14px; overflow:hidden; display:flex; flex-direction:column; transition:transform .2s ease }
+    .card:hover { transform:translateY(-4px) }
+    .thumb { width:100%; height:140px; object-fit:cover; background:#0e1122 }
+    .card-body { padding:14px }
+    .card-title { font-weight:600; margin:0 0 6px }
+    .card-desc { color:var(--muted); font-size:14px; margin:0 0 10px; min-height:40px }
+    .tags { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:10px }
+    .tag { font-size:12px; color:#b9c2d6; background:#1e2236; padding:4px 8px; border-radius:999px; border:1px solid #2b3150 }
+    .card-actions { margin-top:auto; padding:0 14px 14px }
+    .links { display:flex; gap:12px }
+    .about { display:grid; grid-template-columns:260px 1fr; gap:20px; align-items:start }
+    .about img { width:100%; border-radius:12px; border:1px solid #2a2f45 }
+    .contact { background:#0c1021; border:1px solid #202542; border-radius:14px; padding:16px }
+    footer { color:#7f8aaa; font-size:13px; padding:20px 0; border-top:1px solid #1d2238; margin-top:24px }
+    @media (max-width:960px){ .grid{ grid-template-columns:repeat(2,1fr) } .about{ grid-template-columns:1fr } .title{ font-size:32px } }
+    @media (max-width:640px){ .grid{ grid-template-columns:1fr } }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <img src="your-photo.jpg" alt="Ваше имя">
+        <div>
+          <div style="font-weight:700">Ваше Имя</div>
+          <div style="color:var(--muted); font-size:13px">Ваша роль — например, Full‑Stack разработчик</div>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="#projects">Проекты</a>
+        <a href="#about">Обо мне</a>
+        <a href="#contact">Контакты</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <h1 class="title">Создаю понятные и быстрые веб‑приложения</h1>
+      <p class="subtitle">Короткий оффер на 1–2 предложения. Чем вы полезны и чем выделяетесь.</p>
+      <div class="cta">
+        <a class="btn" href="#contact">Связаться</a>
+        <a class="btn secondary" href="https://github.com/your" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Проекты</h2>
+      <div class="grid">
+        <article class="card">
+          <img class="thumb" src="project1.jpg" alt="Проект 1">
+          <div class="card-body">
+            <h3 class="card-title">Проект 1</h3>
+            <p class="card-desc">Краткое описание проекта (1–2 строки).</p>
+            <div class="tags">
+              <span class="tag">React</span><span class="tag">Node</span><span class="tag">PostgreSQL</span>
+            </div>
+          </div>
+          <div class="card-actions">
+            <div class="links">
+              <a href="https://demo1.example.com" target="_blank" rel="noopener">Демо</a>
+              <a href="https://github.com/you/project1" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img class="thumb" src="project2.jpg" alt="Проект 2">
+          <div class="card-body">
+            <h3 class="card-title">Проект 2</h3>
+            <p class="card-desc">Короткое описание проекта.</p>
+            <div class="tags">
+              <span class="tag">Vue</span><span class="tag">Firebase</span>
+            </div>
+          </div>
+          <div class="card-actions"><div class="links">
+            <a href="#" target="_blank" rel="noopener">Демо</a>
+            <a href="#" target="_blank" rel="noopener">GitHub</a>
+          </div></div>
+        </article>
+
+        <article class="card">
+          <img class="thumb" src="project3.jpg" alt="Проект 3">
+          <div class="card-body">
+            <h3 class="card-title">Проект 3</h3>
+            <p class="card-desc">Короткое описание проекта.</p>
+            <div class="tags"><span class="tag">Python</span><span class="tag">FastAPI</span></div>
+          </div>
+          <div class="card-actions"><div class="links">
+            <a href="#" target="_blank" rel="noopener">Демо</a>
+            <a href="#" target="_blank" rel="noopener">GitHub</a>
+          </div></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>Обо мне</h2>
+      <div class="about">ё
+        <img src="your-photo.jpg" alt="Ваше фото">
+        <div>
+          <p>Короткий рассказ о вашем опыте, доменной экспертизе, любимых технологиях и ценности для клиентов.</p>
+          <p>Достижения, цифры, клиенты — по желанию.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Контакты</h2>
+      <div class="contact">
+        <p>Почта: <a href="mailto:you@example.com">you@example.com</a></p>
+        <p>Telegram: <a href="https://t.me/your" target="_blank" rel="noopener">@your</a></p>
+        <p>LinkedIn: <a href="https://linkedin.com/in/your" target="_blank" rel="noopener">linkedin.com/in/your</a></p>
+      </div>
+    </section>
+
+    <footer>© <span id="y"></span> Ваше Имя. Все права защищены.</footer>
+  </div>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>

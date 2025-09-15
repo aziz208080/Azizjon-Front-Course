@@ -1,0 +1,578 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+    --header-height: 3.5rem;
+
+    /*========== Colors ==========*/
+    --first-color: #ff6b6b;
+    --first-color-alt: #ff5252;
+    --title-color: #333333;
+    --text-color: #707070;
+    --text-color-light: #a6a6a6;
+    --body-color: #ffffff;
+    --container-color: #ffffff;
+    --border-color: #f0f0f0;
+    
+    /* Food Section Colors */
+    --food-color: #ff6b6b;
+    --food-color-alt: #ff5252;
+    
+    /* Watches Section Colors */
+    --watches-color: #4facfe;
+    --watches-color-alt: #00f2fe;
+    
+    /* Headphones Section Colors */
+    --headphones-color: #8e44ad;
+    --headphones-color-alt: #9b59b6;
+
+    /*========== Font and typography ==========*/
+    --body-font: 'Poppins', sans-serif;
+    --biggest-font-size: 2.25rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+    --smaller-font-size: .75rem;
+
+    /*========== Font weight ==========*/
+    --font-medium: 500;
+    --font-bold: 700;
+
+    /*========== Margins ==========*/
+    --mb-0-5: .5rem;
+    --mb-0-75: .75rem;
+    --mb-1: 1rem;
+    --mb-1-5: 1.5rem;
+    --mb-2: 2rem;
+    --mb-2-5: 2.5rem;
+    --mb-3: 3rem;
+
+    /*========== z index ==========*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+}
+
+/* Responsive typography */
+@media screen and (min-width: 968px) {
+    :root {
+        --biggest-font-size: 3.5rem;
+        --h1-font-size: 2.25rem;
+        --h2-font-size: 1.5rem;
+        --h3-font-size: 1.25rem;
+        --normal-font-size: 1rem;
+        --small-font-size: .875rem;
+        --smaller-font-size: .813rem;
+    }
+}
+
+/*=============== BASE ===============*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    background-color: var(--body-color);
+    color: var(--text-color);
+}
+
+h1, h2, h3 {
+    color: var(--title-color);
+    font-weight: var(--font-bold);
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.section {
+    padding: 5rem 0 2rem;
+}
+
+.section-title {
+    font-size: var(--h2-font-size);
+    color: var(--title-color);
+    text-align: center;
+    margin-bottom: var(--mb-1);
+}
+
+.section-subtitle {
+    display: block;
+    font-size: var(--small-font-size);
+    color: var(--text-color-light);
+    text-align: center;
+    margin-bottom: var(--mb-3);
+}
+
+/*=============== BUTTONS ===============*/
+.btn {
+    display: inline-block;
+    background-color: var(--first-color);
+    color: #fff;
+    padding: 1rem 1.75rem;
+    border-radius: .5rem;
+    font-weight: var(--font-medium);
+    transition: .3s;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: var(--first-color-alt);
+}
+
+.primary-btn {
+    background-color: var(--first-color);
+}
+
+.primary-btn:hover {
+    background-color: var(--first-color-alt);
+}
+
+.secondary-btn {
+    background-color: transparent;
+    border: 2px solid var(--first-color);
+    color: var(--first-color);
+}
+
+.secondary-btn:hover {
+    background-color: var(--first-color);
+    color: #fff;
+}
+
+/*=============== HEADER ===============*/
+.header {
+    width: 100%;
+    background-color: var(--body-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: var(--z-fixed);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav {
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    font-size: var(--h2-font-size);
+    color: var(--title-color);
+}
+
+.logo span {
+    color: var(--first-color);
+}
+
+.nav__list {
+    display: flex;
+    column-gap: 2rem;
+}
+
+.nav__link {
+    color: var(--title-color);
+    font-weight: var(--font-medium);
+    transition: .3s;
+}
+
+.nav__link:hover,
+.active-link {
+    color: var(--first-color);
+}
+
+.nav__toggle,
+.nav__close {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Show menu */
+.show-menu {
+    right: 0;
+}
+
+/* Change background header */
+.scroll-header {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Active link */
+.active-link {
+    color: var(--first-color);
+}
+
+/*=============== HERO ===============*/
+.hero {
+    padding: 7rem 0 2rem;
+    background-color: var(--body-color);
+}
+
+.hero-content {
+    text-align: center;
+    margin-bottom: var(--mb-3);
+}
+
+.hero-content h1 {
+    font-size: var(--biggest-font-size);
+    margin-bottom: var(--mb-1);
+}
+
+.hero-content p {
+    margin-bottom: var(--mb-2);
+}
+
+.hero-btns {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/*=============== FOOD SECTION ===============*/
+.food {
+    padding: 5rem 0;
+    background-color: #fff8f8;
+}
+
+.food-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.food-text h3 {
+    font-size: var(--h2-font-size);
+    margin-bottom: var(--mb-1);
+    color: var(--food-color);
+}
+
+.food-text p {
+    margin-bottom: var(--mb-2);
+}
+
+.food-text .btn {
+    background-color: var(--food-color);
+}
+
+.food-text .btn:hover {
+    background-color: var(--food-color-alt);
+}
+
+/*=============== WATCHES SECTION ===============*/
+.watches {
+    padding: 5rem 0;
+    background-color: #f0f8ff;
+}
+
+.watches-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.watches-text h3 {
+    font-size: var(--h2-font-size);
+    margin-bottom: var(--mb-1);
+    color: var(--watches-color);
+}
+
+.watches-text p {
+    margin-bottom: var(--mb-2);
+}
+
+.watches-text .btn {
+    background-color: var(--watches-color);
+}
+
+.watches-text .btn:hover {
+    background-color: var(--watches-color-alt);
+}
+
+/*=============== HEADPHONES SECTION ===============*/
+.headphones {
+    padding: 5rem 0;
+    background-color: #f8f0ff;
+}
+
+.headphones-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.headphones-text h3 {
+    font-size: var(--h2-font-size);
+    margin-bottom: var(--mb-1);
+    color: var(--headphones-color);
+}
+
+.headphones-text p {
+    margin-bottom: var(--mb-2);
+}
+
+.headphones-text .btn {
+    background-color: var(--headphones-color);
+}
+
+.headphones-text .btn:hover {
+    background-color: var(--headphones-color-alt);
+}
+
+/*=============== CONTACT ===============*/
+.contact {
+    padding: 5rem 0;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.contact-form {
+    display: grid;
+    row-gap: 1.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border-radius: .5rem;
+    border: 1px solid var(--border-color);
+    font-size: var(--normal-font-size);
+    color: var(--text-color);
+    outline: none;
+    transition: .3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--first-color);
+}
+
+.form-group textarea {
+    height: 150px;
+    resize: none;
+}
+
+.contact-info {
+    display: grid;
+    row-gap: 1.5rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+    margin-bottom: var(--mb-1);
+}
+
+.info-item i {
+    font-size: 1.5rem;
+    color: var(--first-color);
+}
+
+/*=============== FOOTER ===============*/
+.footer {
+    padding: 3rem 0;
+    background-color: var(--title-color);
+    color: #fff;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-logo h2 {
+    color: #fff;
+    font-size: var(--h2-font-size);
+    margin-bottom: var(--mb-1);
+}
+
+.footer-logo span {
+    color: var(--first-color);
+}
+
+.footer-logo p {
+    margin-bottom: var(--mb-2);
+}
+
+.footer-links h3 {
+    color: #fff;
+    font-size: var(--h3-font-size);
+    margin-bottom: var(--mb-1-5);
+}
+
+.footer-links ul li {
+    margin-bottom: var(--mb-0-75);
+}
+
+.footer-links ul li a {
+    color: #f0f0f0;
+    transition: .3s;
+}
+
+.footer-links ul li a:hover {
+    color: var(--first-color);
+}
+
+.footer-social h3 {
+    color: #fff;
+    font-size: var(--h3-font-size);
+    margin-bottom: var(--mb-1-5);
+}
+
+.social-icons {
+    display: flex;
+    column-gap: 1rem;
+}
+
+.social-icons a {
+    display: inline-flex;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border-radius: 50%;
+    transition: .3s;
+}
+
+.social-icons a:hover {
+    background-color: var(--first-color);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/*=============== MEDIA QUERIES ===============*/
+/* For small devices */
+@media screen and (max-width: 320px) {
+    .container {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+}
+
+/* For medium devices */
+@media screen and (min-width: 576px) {
+    .hero-btns {
+        justify-content: center;
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 767px) {
+    .food-content,
+    .watches-content,
+    .headphones-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-content {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* For large devices */
+@media screen and (min-width: 992px) {
+    .container {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .section {
+        padding: 8rem 0 1rem;
+    }
+
+    .nav {
+        height: calc(var(--header-height) + 1.5rem);
+    }
+
+    .nav__list {
+        display: flex;
+        column-gap: 2rem;
+    }
+
+    .nav__toggle,
+    .nav__close {
+        display: none;
+    }
+
+    .hero-content h1 {
+        font-size: 4rem;
+    }
+
+    .hero-content p {
+        width: 70%;
+        margin: 0 auto var(--mb-2);
+    }
+
+    .food-content,
+    .watches-content,
+    .headphones-content {
+        column-gap: 5rem;
+    }
+
+    .contact-container {
+        column-gap: 5rem;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .container {
+        max-width: 1200px;
+    }
+}
+
+/* For tall screens on mobiles and desktop*/
+@media screen and (min-height: 721px) {
+    .hero {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+    }
+}
