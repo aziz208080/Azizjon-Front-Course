@@ -1,7 +1,9 @@
-let a 
+function a() {
+    console.log('Hey there')
+}
 
-const c = 10    
+a()
 
-// a = true 
+a = 10
 
-console.log(a)
+a()

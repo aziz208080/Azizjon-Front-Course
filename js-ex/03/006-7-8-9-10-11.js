@@ -18,4 +18,20 @@ console.log(console.log(10))
 
 const myNamee = 'Aziz'
 
-console.log(myNamee)
+console.log(myNamee)  
+
+
+const objectA = {
+    a: 10,
+    b:true
+}
+
+function a() {
+    console.log('Hey there')
+}
+
+a()
+
+a = 10
+
+a()
