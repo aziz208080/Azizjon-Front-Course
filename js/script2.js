@@ -10,13 +10,13 @@
 // console.log(undefined);
 // console.log(true);
 // console.log(false);
-console.log(typeof(false));
-console.log(typeof(function test(){}));
-console.error(123)
-console.warn(123)
-console.table('test text', 1234)
-console.dir(Number)
-console.dir(String)
+// console.log(typeof(false));
+// console.log(typeof(function test(){}));
+// console.error(123)
+// console.warn(123)
+// console.table('test text', 1234)
+// console.dir(Number)
+// console.dir(String)
 
 // // -----------------------------------------------------------------------------------
 
